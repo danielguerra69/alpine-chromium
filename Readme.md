@@ -39,14 +39,14 @@ terminal. See note Xquartz
 
 ssh to your new container
 ```bash
-ssh -i id_rsa -p 4848 -X root@<dockerhost> chromium --no-sandbox --disable-gpu
+ssh -i id_rsa -p 4848 -X root@<dockerhost> chromium-browser --no-sandbox --disable-gpu
 ```
 
 For ssh key forwarding use ssh-agent
 ```bash
 ssh-agent
 ssh-add id_rsassh -A -p 4848 -X root@<dockerhost>
-ssh -C -A -t -X -p 4848  root@<dockerhost> ssh -C -A -t -X -p 777 root@<hop> chromium --no-sandbox --disable-gpu
+ssh -C -A -t -X -p 4848  root@<dockerhost> ssh -C -A -t -X -p 777 root@<hop> chromium-browser --no-sandbox --disable-gpu
 ```
 in the last example the each hop must have the same authorized_keys.
 
